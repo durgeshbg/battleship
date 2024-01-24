@@ -17,8 +17,12 @@ export default class Gameboard {
     }
   }
 
+  isvalid(x, y, type) {
+    return this.#board[x][y] === null && x + type < 10;
+  }
+
   placeShip(x, y) {
-    if (this.#board[x][y] === null && x + this.ships[0] < 10) {
+    if (this.isvalid(x, y, this.ships[0])) {
       const type = this.ships.shift();
       const ship = new Ship(type);
       for (let i = 0; i < type; i += 1) this.#board[x + i][y] = ship;
