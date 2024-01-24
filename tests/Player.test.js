@@ -17,4 +17,18 @@ describe('Player: ', () => {
   test('Shoot when no ships', () => {
     expect(human.shoot(2, 3)).toBe(-1);
   });
+
+  human.gameboard.placeShip(3, 3);
+
+  test('Score after hit', () => {
+    expect(human.score).toBe(0);
+  });
+
+  test('Shoot ship', () => {
+    expect(human.shoot(5, 3)).toBe(1);
+  });
+
+  test('Score after hit', () => {
+    expect(human.score).toBe(1);
+  });
 });

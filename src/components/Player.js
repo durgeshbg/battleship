@@ -5,6 +5,7 @@ export default class Player {
     this.name = name;
     this.gameboard = new Gameboard();
     this.turn = turn;
+    this.score = 0;
   }
 
   flipTurn() {
@@ -14,6 +15,8 @@ export default class Player {
   }
 
   shoot(x, y) {
-    return this.gameboard.recieveAttack(x, y);
+    const res = this.gameboard.recieveAttack(x, y);
+    if (res === 1) this.score += 1;
+    return res;
   }
 }
