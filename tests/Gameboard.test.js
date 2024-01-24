@@ -2,12 +2,9 @@
 import Gameboard from '../src/components/Gameboard';
 
 describe('Game Board: ', () => {
-  const gameboard = new Gameboard('Human');
+  const gameboard = new Gameboard();
 
   // Object
-  test('Object: Name', () => {
-    expect(gameboard.name).toBe('Human');
-  });
   test('Object: Ships', () => {
     expect(gameboard.ships).toEqual([5, 4, 3, 3, 2, 2, 1]);
   });

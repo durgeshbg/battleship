@@ -3,9 +3,8 @@ import Ship from './Ship';
 export default class Gameboard {
   #board = [];
 
-  constructor(name) {
+  constructor() {
     this.ships = [5, 4, 3, 3, 2, 2, 1];
-    this.name = name;
     this.initBoard();
   }
 
