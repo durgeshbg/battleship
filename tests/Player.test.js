@@ -8,4 +8,13 @@ describe('Player: ', () => {
     expect(human.turn).toBeTruthy();
     expect(typeof human.gameboard).toEqual('object');
   });
+
+  test('Flip turn', () => {
+    expect(human.flipTurn()).toBe(true);
+    expect(human.flipTurn()).toBe(false);
+  });
+
+  test('Shoot when no ships', () => {
+    expect(human.shoot(2, 3)).toBe(-1);
+  });
 });

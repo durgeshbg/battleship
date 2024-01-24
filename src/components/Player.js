@@ -6,4 +6,14 @@ export default class Player {
     this.gameboard = new Gameboard();
     this.turn = turn;
   }
+
+  flipTurn() {
+    const { turn } = { ...this };
+    this.turn = !this.turn;
+    return turn;
+  }
+
+  shoot(x, y) {
+    return this.gameboard.recieveAttack(x, y);
+  }
 }
