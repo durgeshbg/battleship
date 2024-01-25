@@ -20,7 +20,7 @@ export default class Gameboard {
     let c = 0;
     if (z === 1) {
       for (let i = 0; i < type; i += 1)
-        if (this.board[x][y + 1] === null) c += 1;
+        if (this.board[x][y + i] === null) c += 1;
     } else {
       for (let i = 0; i < type; i += 1)
         if (this.board[x + i][y] === null) c += 1;
