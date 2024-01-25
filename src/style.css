@@ -1,3 +1,12 @@
+:root {
+  --orange: #f8cf85;
+  --black: #404040;
+  --light-blue: #2794b3;
+  --red: #ff3f3f;
+  --green: #88ff88;
+  --white: #e6e6e6;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -14,4 +23,76 @@
     'Open Sans',
     'Helvetica Neue',
     sans-serif;
+}
+
+body {
+  background-color: var(--orange);
+  color: var(--black);
+}
+
+h1 {
+  text-align: center;
+  font-size: 5rem;
+}
+
+.score {
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+.score .left,
+.score .right {
+  width: 200px;
+  padding: 5px 10px;
+  margin: 30px 0px;
+  font-weight: lighter;
+  border: 0.1px solid var(--black);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.score .value {
+  color: var(--light-blue);
+  font-weight: 900;
+  border-left: 0.1px solid var(--black);
+  padding-left: 10px;
+}
+
+.gameboard {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.gameboard .left,
+.gameboard .right {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.row {
+  display: flex;
+  gap: 1px;
+}
+.cell {
+  padding: 30px;
+  border: 0.1px solid var(--black);
+  border-radius: 5px;
+}
+
+.miss {
+  background-color: var(--red);
+}
+.hit {
+  background-color: var(--green);
+}
+.boat {
+  background-color: var(--white);
+}
+
+.winner {
+  align-items: center;
+  font-size: 10rem;
 }
