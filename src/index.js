@@ -1,6 +1,8 @@
 import './style.css';
 import Player from './components/Player';
 import Computer from './components/Computer';
+import populateBoard from './DOM/populateBoard';
+import boardListener from './DOM/boardListener';
 
 const human = new Player('Human', true);
 const computer = new Computer();
@@ -21,4 +23,5 @@ computer.gameboard.placeShip(6, 7);
 computer.gameboard.placeShip(4, 8);
 computer.gameboard.placeShip(8, 1);
 
-
+populateBoard(human, computer);
+boardListener(human, computer);
