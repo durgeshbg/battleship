@@ -16,8 +16,16 @@ export default class Gameboard {
     }
   }
 
+  hasNoShip(x, y, type = 5) {
+    let c = 0;
+    for (let i = 0; i < type; i += 1) if (this.board[x + i][y] === null) c += 1;
+    return c === type;
+  }
+
   isvalid(x, y, type) {
-    return this.board[x][y] === null && x + type < 10;
+    return (
+      this.board[x][y] === null && x + type <= 10 && this.hasNoShip(x, y, type)
+    );
   }
 
   placeShip(x, y) {
