@@ -16,23 +16,41 @@ export default class Gameboard {
     }
   }
 
-  hasNoShip(x, y, type = 5) {
+  hasNoShip(x, y, z, type = 5) {
     let c = 0;
-    for (let i = 0; i < type; i += 1) if (this.board[x + i][y] === null) c += 1;
+    if (z === 1) {
+      for (let i = 0; i < type; i += 1)
+        if (this.board[x][y + 1] === null) c += 1;
+    } else {
+      for (let i = 0; i < type; i += 1)
+        if (this.board[x + i][y] === null) c += 1;
+    }
     return c === type;
   }
 
-  isvalid(x, y, type) {
-    return (
-      this.board[x][y] === null && x + type <= 10 && this.hasNoShip(x, y, type)
-    );
+  isvalid(x, y, z, type) {
+    let res = false;
+    if (z === 1) {
+      res =
+        this.board[x][y] === null &&
+        y + type <= 10 &&
+        this.hasNoShip(x, y, z, type);
+    } else {
+      res =
+        this.board[x][y] === null &&
+        x + type <= 10 &&
+        this.hasNoShip(x, y, z, type);
+    }
+    return res;
   }
 
-  placeShip(x, y) {
-    if (this.isvalid(x, y, this.ships[0])) {
+  placeShip(x, y, z = 0) {
+    if (this.isvalid(x, y, z, this.ships[0])) {
       const type = this.ships.shift();
       const ship = new Ship(type);
-      for (let i = 0; i < type; i += 1) this.board[x + i][y] = ship;
+      for (let i = 0; i < type; i += 1)
+        if (z === 1) this.board[x][y + i] = ship;
+        else this.board[x + i][y] = ship;
       return ship;
     }
     return false;
