@@ -1,3 +1,4 @@
+import displayWinner from './displayWinner';
 import populateBoard from './populateBoard';
 
 export default function boardListener(leftPlayer, rightPlayer) {
@@ -14,6 +15,12 @@ export default function boardListener(leftPlayer, rightPlayer) {
             populateBoard(leftPlayer, rightPlayer);
             boardListener(leftPlayer, rightPlayer);
           }
+        }
+        if (leftPlayer.gameboard.allSunk()) {
+          displayWinner(rightPlayer);
+        }
+        if (rightPlayer.gameboard.allSunk()) {
+          displayWinner(leftPlayer);
         }
       });
     });
