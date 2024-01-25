@@ -2,7 +2,7 @@ import Player from './Player';
 
 export default class Computer extends Player {
   constructor() {
-    super('computer', true);
+    super('Computer', true);
     this.cords = [];
   }
 
