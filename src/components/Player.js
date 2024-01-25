@@ -14,8 +14,8 @@ export default class Player {
     return turn;
   }
 
-  shoot(x, y) {
-    const res = this.gameboard.recieveAttack(x, y);
+  shoot(x, y, player) {
+    const res = player.gameboard.recieveAttack(x, y);
     if (res === 1) this.score += 1;
     return res;
   }

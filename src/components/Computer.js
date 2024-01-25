@@ -28,9 +28,11 @@ export default class Computer extends Player {
     return this.generateCords();
   }
 
-  shoot() {
+  shoot(player) {
     const cords = this.generateCords();
     if (!cords) return -1;
-    return this.gameboard.recieveAttack(cords[0], cords[1]);
+    const res = player.gameboard.recieveAttack(cords[0], cords[1]);
+    if (res === 1) this.score += 1;
+    return res;
   }
 }
