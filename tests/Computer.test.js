@@ -1,8 +1,10 @@
 /* eslint-disable no-undef */
 import Computer from '../src/components/Computer';
+import Player from '../src/components/Player';
 
 describe('Computer: ', () => {
   const computer = new Computer('computer');
+  const opponent = new Player('Opponent');
 
   test('Equality of cordinates', () => {
     expect(computer.isEqual([1, 2], [2, 1])).toBe(false);
@@ -21,6 +23,6 @@ describe('Computer: ', () => {
 
   test('Shoot when no ships', () => {
     computer.cords.pop();
-    expect(computer.shoot()).toBe(-1);
+    expect(computer.shoot(opponent)).toBe(-1);
   });
 });
