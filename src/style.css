@@ -92,6 +92,9 @@ h1 {
 .boat {
   background-color: var(--white);
 }
+.gameboard .right .boat {
+  background-color: var(--orange);
+}
 
 .winner {
   align-items: center;
