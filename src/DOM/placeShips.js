@@ -33,7 +33,6 @@ export default function placeShips(leftPlayer, rightPlayer) {
   populateBoard(leftPlayer, rightPlayer);
 
   document.querySelector('.random .option').onclick = () => {
-    document.querySelector('.restart .option').click();
     placeRandom(leftPlayer);
     populateBoard(leftPlayer, rightPlayer);
     boardListener(leftPlayer, rightPlayer);
