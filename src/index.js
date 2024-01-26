@@ -12,3 +12,7 @@ export default function init() {
   placeShips(human, computer);
 }
 init();
+
+document.querySelector('.restart .option').onclick = () => {
+  init();
+};
