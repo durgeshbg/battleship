@@ -1,7 +1,8 @@
 :root {
   --orange: #f8cf85;
   --black: #404040;
-  --light-blue: #2794b3;
+  --light-blue: #00afdf;
+  --blue: #2794b3;
   --red: #ff3f3f;
   --green: #88ff88;
   --white: #e6e6e6;
@@ -95,4 +96,46 @@ h1 {
 .winner {
   align-items: center;
   font-size: 10rem;
+}
+
+.dashboard {
+  height: 70px;
+  width: 10%;
+  background-color: var(--white);
+  margin: auto;
+  margin-top: 30px;
+  border-radius: 5px;
+  padding: 10px;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.dashboard > * {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard .option {
+  background-color: var(--blue);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 30px;
+  padding: 20px;
+}
+
+.dashboard .option:hover {
+  background-color: var(--light-blue);
+  cursor: pointer;
+}
+
+.dashboard .tag {
+  font-size: 10px;
+  font-weight: lighter;
 }
