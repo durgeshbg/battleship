@@ -104,6 +104,7 @@ h1 {
 
 .gameboard .right.blur .cell {
   background-color: var(--dark-orange);
+  opacity: 0.2;
 }
 
 .winner {
