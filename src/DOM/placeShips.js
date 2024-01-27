@@ -1,4 +1,5 @@
 /* eslint-disable no-param-reassign */
+import { addBlur, removeBlur } from './blur';
 import boardListener from './boardListener';
 import populateBoard from './populateBoard';
 import previewUpdate from './preview';
@@ -24,7 +25,7 @@ function placeMannual(player, board, opponent, z = 0) {
         player.gameboard.placeShip(i, j, z);
         populateBoard(player, opponent);
         if (player.gameboard.ships.length === 0) {
-          document.querySelector('.gameboard .right').classList.remove('blur');
+          removeBlur(document.querySelector('.gameboard .right'));
           boardListener(player, opponent);
         } else placeMannual(player, board, opponent, z);
       };
@@ -35,12 +36,12 @@ function placeMannual(player, board, opponent, z = 0) {
 export default function placeShips(leftPlayer, rightPlayer) {
   placeRandom(rightPlayer);
   populateBoard(leftPlayer, rightPlayer);
-  document.querySelector('.gameboard .right').classList.add('blur');
+  addBlur(document.querySelector('.gameboard .right'));
 
   document.querySelector('.random .option').onclick = () => {
     placeRandom(leftPlayer);
     populateBoard(leftPlayer, rightPlayer);
-    document.querySelector('.gameboard .right').classList.remove('blur');
+    removeBlur(document.querySelector('.gameboard .right'));
     boardListener(leftPlayer, rightPlayer);
   };
 
