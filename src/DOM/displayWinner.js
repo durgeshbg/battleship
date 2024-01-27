@@ -1,9 +1,11 @@
 export default function displayWinner(player) {
-  const gameboard = document.querySelector('.gameboard');
+  const right = document.querySelector('.gameboard .right');
+  const left = document.querySelector('.gameboard .left');
   const winnerDiv = document.createElement('div');
 
-  gameboard.innerHTML = '';
+  right.innerHTML = '';
+  left.innerHTML = '';
   winnerDiv.textContent = `${player.name} wins!`;
   winnerDiv.classList.add('winner');
-  gameboard.appendChild(winnerDiv);
+  right.appendChild(winnerDiv);
 }
