@@ -111,12 +111,42 @@ h1 {
   font-size: 10rem;
 }
 
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 30px;
+}
+
+.preview {
+  background-color: var(--white);
+  height: 70px;
+  width: 10%;
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview .display {
+  width: 90%;
+  height: 60px;
+  border: 0.1px solid black;
+  border-top: none;
+  border-radius: 0px 0px 5px 5px;
+  background-color: var(--black);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .dashboard {
   height: 70px;
   width: 20%;
   background-color: var(--white);
-  margin: auto;
-  margin-top: 30px;
   border-radius: 5px;
   padding: 10px;
 
@@ -148,7 +178,7 @@ h1 {
   cursor: pointer;
 }
 
-.dashboard .tag {
+.navbar .tag {
   font-size: 10px;
   font-weight: lighter;
 }
