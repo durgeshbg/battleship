@@ -20,9 +20,10 @@ function placeMannual(player, board, opponent, z = 0) {
       cell.onclick = () => {
         player.gameboard.placeShip(i, j, z);
         populateBoard(player, opponent);
-        if (player.gameboard.ships.length === 0)
+        if (player.gameboard.ships.length === 0) {
+          document.querySelector('.gameboard .right').classList.remove('blur');
           boardListener(player, opponent);
-        else placeMannual(player, board, opponent, z);
+        } else placeMannual(player, board, opponent, z);
       };
     });
   });
@@ -31,10 +32,12 @@ function placeMannual(player, board, opponent, z = 0) {
 export default function placeShips(leftPlayer, rightPlayer) {
   placeRandom(rightPlayer);
   populateBoard(leftPlayer, rightPlayer);
+  document.querySelector('.gameboard .right').classList.add('blur');
 
   document.querySelector('.random .option').onclick = () => {
     placeRandom(leftPlayer);
     populateBoard(leftPlayer, rightPlayer);
+    document.querySelector('.gameboard .right').classList.remove('blur');
     boardListener(leftPlayer, rightPlayer);
   };
 
