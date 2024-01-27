@@ -1,6 +1,7 @@
 /* eslint-disable no-param-reassign */
 import boardListener from './boardListener';
 import populateBoard from './populateBoard';
+import previewUpdate from './preview';
 
 function placeRandom(player) {
   while (player.gameboard.ships.length) {
@@ -14,7 +15,9 @@ function placeRandom(player) {
 function placeMannual(player, board, opponent, z = 0) {
   document.querySelector('.rotate .option').onclick = () => {
     z = z === 0 ? 1 : 0;
+    previewUpdate(player, z);
   };
+  previewUpdate(player, z);
   board.childNodes.forEach((row, i) => {
     row.childNodes.forEach((cell, j) => {
       cell.onclick = () => {
