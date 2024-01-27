@@ -1,5 +1,6 @@
 :root {
   --orange: #f8cf85;
+  --dark-orange: #f8bc4d;
   --black: #404040;
   --light-blue: #00afdf;
   --blue: #2794b3;
@@ -83,6 +84,11 @@ h1 {
   border-radius: 5px;
 }
 
+.gameboard .right .cell:hover,
+.gameboard .left .cell:hover {
+  background-color: var(--dark-orange);
+}
+
 .miss {
   background-color: var(--red);
 }
@@ -94,6 +100,10 @@ h1 {
 }
 .gameboard .right .boat {
   background-color: var(--orange);
+}
+
+.gameboard .right.blur .cell {
+  background-color: var(--dark-orange);
 }
 
 .winner {
