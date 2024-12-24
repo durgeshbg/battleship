@@ -41,5 +41,120 @@
         </div>
       </div>
     </div>
+    <div className="dialog-opener">
+      <button>Rules</button>
+    </div>
+    <dialog>
+      <button>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="{1}"
+          stroke="white"
+          className="size-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+          />
+        </svg>
+      </button>
+      <div className="rules-container">
+        <h1 className="rules-header">Battleship Game Rules</h1>
+        <p>Here are the rules for the web-based Battleship game:</p>
+
+        <ul>
+          <li>
+            <strong>Objective:</strong> Sink all of your opponent's ships before
+            they sink yours.
+          </li>
+          <li>
+            <strong>Setup:</strong>
+            <ul>
+              <li>Each player has a gameboard to place their ships.</li>
+              <li>
+                Ships vary in length and are placed either horizontally or
+                vertically on the grid.
+              </li>
+              <li>
+                Players can manually place ships or use a random placement
+                feature.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Gameplay:</strong>
+            <ul>
+              <li>
+                Players take turns attacking the opponent's gameboard by
+                selecting grid coordinates.
+              </li>
+              <li>
+                If the attack hits a ship, the corresponding ship's
+                <code>hit()</code> function is triggered.
+              </li>
+              <li>
+                Missed shots are recorded on the gameboard and displayed
+                visually.
+              </li>
+              <li>
+                A ship is considered sunk when the number of hits equals its
+                length.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Winning:</strong>
+            <ul>
+              <li>
+                The game ends when all of one player's ships have been sunk.
+              </li>
+              <li>The first player to sink all their opponent's ships wins.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Features:</strong>
+            <ul>
+              <li>
+                The computer opponent can make random legal moves to attack the
+                player's gameboard.
+              </li>
+              <li>
+                The game alternates turns between the player and the computer
+                until a winner is determined.
+              </li>
+              <li>
+                Gameboards display both hits and missed shots for easy tracking.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Implementation Notes:</strong>
+            <ul>
+              <li>
+                Ships are objects with properties for length, hits, and a
+                function to check if they are sunk.
+              </li>
+              <li>
+                The gameboard manages ship placement, tracks attacks, and
+                reports the game state.
+              </li>
+              <li>
+                Event listeners handle user actions like placing ships and
+                attacking coordinates.
+              </li>
+              <li>
+                Game logic is tested through unit tests rather than relying on
+                the DOM during development.
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <p className="footer">Good Luck and Sink Those Ships!</p>
+      </div>
+    </dialog>
   </body>
 </html>

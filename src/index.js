@@ -16,3 +16,11 @@ init();
 document.querySelector('.restart .option').onclick = () => {
   init();
 };
+
+const dialog = document.querySelector('dialog');
+document.querySelector('.dialog-opener').onclick = () => {
+  dialog.showModal();
+};
+document.querySelector('.dialog-closer').onclick = () => {
+  dialog.close();
+};
